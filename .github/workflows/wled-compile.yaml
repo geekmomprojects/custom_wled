@@ -31,6 +31,7 @@ jobs:
         npm install
         echo '[env:custom_build]' >>platformio.ini
         echo 'extends = env:esp32_4MB_S' >>platformio.ini
+        lib_deps = arduinoFFT @ 2.0.4+sha.dcfbcd7
         echo 'build_flags = ${env:esp32_4MB_S.build_flags} -D DATA_PINS=18 -D BTNPIN=9 -D CLIENT_SSID='\''"emf"'\'' -D CLIENT_PASS='\''"emf"'\'' -D WLED_AP_SSID='\''"WLED-HAT"'\''' >>platformio.ini
         
         echo 'build_unflags= -D WLED_RELEASE_NAME' >>platformio.ini
